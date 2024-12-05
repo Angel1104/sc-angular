@@ -1,0 +1,35 @@
+<div class="control-panel">
+  <!-- Botones para Reconocimiento de Voz -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Reconocimiento de Voz</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-raised-button color="primary" (click)="startRecognition()">Iniciar Voz</button>
+      <button mat-raised-button color="warn" (click)="stopRecognition()">Detener Voz</button>
+      <button mat-raised-button color="accent" (click)="clearTranscript()">Limpiar</button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Botones para MediaPipe -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>MediaPipe</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-raised-button color="accent" (click)="startMediaPipe()">Iniciar MediaPipe</button>
+      <button mat-raised-button color="warn" (click)="stopMediaPipe()">Detener MediaPipe</button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Select de Idioma de Entrada -->
+  <mat-form-field appearance="fill">
+    <mat-label>Idioma de Entrada</mat-label>
+    <mat-select [(value)]="inputLanguage">
+      <mat-option value="en-US">Inglés</mat-option>
+      <mat-option value="es-ES">Español</mat-option>
+      <mat-option value="zh-CN">Chino</mat-option>
+      <mat-option value="it-IT">Italiano</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

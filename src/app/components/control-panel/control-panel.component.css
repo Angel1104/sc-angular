@@ -1,0 +1,7 @@
+.control-panel {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: #f5f5f5;
+  justify-content: center;
+}

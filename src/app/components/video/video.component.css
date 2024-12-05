@@ -1,0 +1,14 @@
+video {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.audio-visualizer {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+}
