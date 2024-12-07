@@ -19,7 +19,7 @@ export class VoiceRecognitionService {
   private translatedTextSource = new BehaviorSubject<string>(''); // Texto traducido acumulado
   public translatedText$ = this.translatedTextSource.asObservable();
 
-  private statusSource = new BehaviorSubject<string>('Detenido.'); // Estado actual
+  private statusSource = new BehaviorSubject<string>('Detenido 🛑'); // Estado actual
   public status$ = this.statusSource.asObservable();
 
   constructor(private translationService: TranslationService) {
@@ -46,9 +46,9 @@ export class VoiceRecognitionService {
       this.recognition.onend = () => {
         if (this.isListening) {
           this.recognition.start(); // Reinicia automáticamente
-          this.statusSource.next('Escuchando...');
+          this.statusSource.next('Escuchando... 🎙️');
         } else {
-          this.statusSource.next('Detenido.');
+          this.statusSource.next('Detenido 🛑');
         }
       };
 
@@ -70,7 +70,7 @@ export class VoiceRecognitionService {
     this.recognition.lang = this.inputLanguage; // Configura el idioma de entrada
     this.recognition.start(); // Inicia el reconocimiento
     this.isListening = true;
-    this.statusSource.next('Escuchando...');
+    this.statusSource.next('Escuchando... 🎙️');
     console.log('Reconocimiento iniciado en idioma:', this.inputLanguage);
   }
 
@@ -80,8 +80,8 @@ export class VoiceRecognitionService {
 
     this.recognition.stop(); // Detiene el reconocimiento
     this.isListening = false;
-    this.statusSource.next('Detenido.');
-    console.log('Reconocimiento detenido.');
+    this.statusSource.next('Detenido 🛑');
+    console.log('Reconocimiento detenido 🛑');
   }
 
   // Limpia el texto acumulado
@@ -89,7 +89,7 @@ export class VoiceRecognitionService {
     this.accumulatedText = ''; // Limpia el texto acumulado
     this.transcriptSource.next(''); // Emite el texto vacío
     this.translatedTextSource.next(''); // Limpia el texto traducido
-    this.statusSource.next('Texto limpio.');
+    this.statusSource.next('Texto limpio. 🧼');
     console.log('Texto acumulado limpiado.');
   }
 

@@ -17,7 +17,7 @@ import { TranslationService } from './services/translation.service';
 export class AppComponent {
   originalText: string = '';
   translatedText: string = '';
-  status: string = 'Detenido'; // Estado inicial
+  status: string = 'Detenido 🛑';
   inputLanguage: string = 'es-ES';
   outputLanguage: string = 'en';
 
@@ -64,10 +64,14 @@ export class AppComponent {
   onInputLanguageChange(lang: string): void {
     this.inputLanguage = lang;
     this.voiceService.setInputLanguage(lang);
+    this.clearText();
+    this.stopRecognition();
   }
 
   onOutputLanguageChange(lang: string): void {
     this.outputLanguage = lang;
     this.voiceService.setOutputLanguage(lang);
+    this.clearText();
+    this.stopRecognition();
   }
 }
