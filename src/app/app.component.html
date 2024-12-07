@@ -1,11 +1,28 @@
-<!-- <mat-toolbar color="primary"> -->
-  <!-- Panel de Control -->
-  <app-control-panel></app-control-panel>
-<!-- </mat-toolbar> -->
+<div class="container">
+  <app-language-selector
+    [inputLanguage]="inputLanguage"
+    [outputLanguage]="outputLanguage"
+    (inputLanguageChanged)="onInputLanguageChange($event)"
+    (outputLanguageChanged)="onOutputLanguageChange($event)"
+  ></app-language-selector>
 
-<div class="app-container">
-  <!-- Video y Audio -->
-  <app-video></app-video>
-  <!-- Traducción -->
-  <app-translation-box></app-translation-box>
+  <app-audio-wave></app-audio-wave>
+
+  <div class="text-container">
+    <app-text-box
+      [text]="originalText"
+      placeholder="Texto Original"
+    ></app-text-box>
+    <app-text-box
+      [text]="translatedText"
+      placeholder="Texto Traducido"
+    ></app-text-box>
+  </div>
+
+  <app-control-buttons
+    (play)="startRecognition()"
+    (stop)="stopRecognition()"
+    (clean)="clearText()"
+    [status]="status"
+  ></app-control-buttons>
 </div>
