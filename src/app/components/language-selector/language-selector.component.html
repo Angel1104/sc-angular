@@ -1,0 +1,17 @@
+<div class="language-selector">
+  <label for="input-lang">Idioma de Entrada:</label>
+  <select id="input-lang" [value]="inputLanguage" (change)="onInputLanguageChange($event)">
+    <option value="es-ES">Español</option>
+    <option value="en-US">Inglés</option>
+    <option value="it-IT">Italiano</option>
+    <option value="zh-CN">Chino</option>
+  </select>
+
+  <label for="output-lang">Idioma de Salida:</label>
+  <select id="output-lang" [value]="outputLanguage" (change)="onOutputLanguageChange($event)">
+    <option value="es">Español</option>
+    <option value="en">Inglés</option>
+    <option value="it">Italiano</option>
+    <option value="zh">Chino</option>
+  </select>
+</div>

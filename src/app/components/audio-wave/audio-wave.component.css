@@ -1,0 +1,15 @@
+.audio-wave-container {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-wave-canvas {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
